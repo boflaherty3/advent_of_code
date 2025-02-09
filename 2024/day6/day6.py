@@ -13,6 +13,7 @@ def next_direction(direction):
     return available_directions[
         (available_directions.index(direction) + 1)
         % len(available_directions)]
+
 def guard_in_grid(position):
     return (0<= position[0] < 130 and 0<= position[1] < 130)
 
@@ -77,14 +78,17 @@ def part_one(space, start_position, direction):
 def x_count(space):
     return len([key for key,val in space.items() if val == 'X'])
 
+def part_two():
+    pass
+
 
 def day6() -> None:
-    with open("day6/data.txt", "r") as file:
+    with open("day6/example.txt", "r") as file:
         lines = [l.strip() for l in file.readlines()]
 
     space = lookup(lines)
     start_position, direction = start(space)
-    # print(space)
+    #print(space)
     print(start(space))
 
     # new_position = move(space, start_position, direction)
